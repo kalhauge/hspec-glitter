@@ -1,0 +1,31 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hspec-glitter
+version:        0.1.0
+synopsis:       A git-based hspec golden test
+category:       Testing
+maintainer:     Christian Gram Kalhauge <christiankalhauge@gmail.com>
+build-type:     Simple
+
+library
+  exposed-modules:
+      Test.Hspec.Glitter
+  other-modules:
+      Paths_hspec_glitter
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fno-warn-incomplete-uni-patterns
+  build-depends:
+      HUnit
+    , base >=4.9 && <5
+    , bytestring
+    , directory
+    , filepath
+    , hspec-core
+    , text
+    , typed-process
+  default-language: Haskell2010
