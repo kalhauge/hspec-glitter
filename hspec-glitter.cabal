@@ -20,7 +20,7 @@ library
       src
   ghc-options: -Wall -fno-warn-incomplete-uni-patterns
   build-depends:
-      HUnit
+      attoparsec
     , base >=4.9 && <5
     , bytestring
     , directory

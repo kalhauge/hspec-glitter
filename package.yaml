@@ -11,10 +11,10 @@ dependencies:
   - hspec-core
   - text
   - bytestring
+  - attoparsec
   - typed-process
   - filepath
   - directory
-  - HUnit
 
 library:
   source-dirs: src
