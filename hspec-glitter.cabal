@@ -13,6 +13,7 @@ build-type:     Simple
 
 library
   exposed-modules:
+      Control.Git
       Test.Hspec.Glitter
   other-modules:
       Paths_hspec_glitter
@@ -34,7 +35,9 @@ test-suite hspec-glitter-test
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
+      Control.GitSpec
       Spec
+      Test.Hspec.GlitterSpec
       Paths_hspec_glitter
   hs-source-dirs:
       test/src

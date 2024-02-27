@@ -1,10 +1,12 @@
 {-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Control.Git where
+module Control.GitSpec where
 
 import Test.Hspec
 import Test.Hspec.Glitter
+
+import Control.Git
 
 spec :: Spec
 spec = do
