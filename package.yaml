@@ -18,3 +18,15 @@ dependencies:
 
 library:
   source-dirs: src
+
+tests:
+  hspec-glitter-test: 
+    source-dirs: test/src
+    main: Main.hs
+    dependencies:
+      - hspec
+      - hspec-discover
+      - hspec-glitter
+      - directory
+      - filepath
+      - typed-process

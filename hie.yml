@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:rtree-c"
+    - path: "./test/src"
+      component: "test:rtree-c-test"

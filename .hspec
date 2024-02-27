@@ -1,0 +1,2 @@
+--failure-report .hspec-failures
+--rerun-all-on-success
