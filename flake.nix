@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
-    flake-utils.url = github:numtide/flake-utils;
-    nix-filter.url = github:numtide/nix-filter;
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+    nix-filter.url = "github:numtide/nix-filter";
   };
   outputs = {
     self,
@@ -11,16 +11,17 @@
     nix-filter,
     ...
   } @ inputs: let
-    packages = final: p: {
+    haskellOverlay = pkgs: final: prev: {
       "hspec-glitter" =
-        p.callCabal2nixWithOptions "hspec-glitter"
+        final.callCabal2nixWithOptions "hspec-glitter"
         (nix-filter.lib {root = self;}) "" {};
     };
     overlays = final: prev: {
-      haskellPackages = prev.haskellPackages.extend (p: _: packages final p);
+      haskellPackages = prev.haskellPackages.extend (haskellOverlay final);
     };
   in
     {
+      inherit haskellOverlay;
       overlays.default = overlays;
     }
     // flake-utils.lib.eachDefaultSystem
@@ -31,7 +32,7 @@
           overlays = [overlays];
         })
         .haskellPackages;
-    in rec {
+    in {
       packages = {
         default = hpkgs.hspec-glitter;
         hspec-glitter = hpkgs.hspec-glitter;
